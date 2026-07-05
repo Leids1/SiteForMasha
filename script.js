@@ -84,7 +84,7 @@ function openPopup(game){
   popupImage.src = imageSource || '';
   popupImage.alt = game.name + ' изображение';
   popupTitle.textContent = isSpecialGroup ? groupVersions[0].name : game.name;
-  popupText.textContent = isSpecialGroup ? 'Выберите версию игры' : 'Официальная страница игры в Steam';
+  popupText.textContent = isSpecialGroup ? 'Выбери часть игры' : 'Страница игры в Steam';
 
   if (isSpecialGroup) {
     popupLinks.innerHTML = groupVersions.map((version) => {
