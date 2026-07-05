@@ -1,0 +1,80 @@
+*{box-sizing:border-box}
+html,body{height:100%}
+.body-bg{ /* helper for soft theme */ }
+.body-bg{ /* helper for soft theme */ }
+.body-root{ }
+body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(135deg,#fff6fb 0%,#fff0f6 45%,#fff2f8 100%);color:#261827;margin:0;padding:0;display:block;min-height:100vh}
+
+/* Theme classes applied on <body> */
+.theme-dark body, .theme-dark{ }
+.theme-dark body, .theme-dark .page{background:linear-gradient(135deg,#071226 0%,#081023 60%,#05060b 100%)}
+.theme-dark body .title{color:#f7fbfd}
+.theme-dark .stamp{background:rgba(255,255,255,0.04);color:rgba(240,246,250,0.9)}
+
+.theme-light{ /* explicit light theme overrides */ }
+.theme-light body, .theme-light{ }
+.theme-light .page{background:linear-gradient(135deg,#fff6fb 0%,#fff0f6 45%,#fff2f8 100%)}
+
+.page{width:100%;max-width:none;padding:28px 40px;padding-top:env(safe-area-inset-top,18px)}
+.page::before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 10% 10%, rgba(255,180,200,0.06), transparent 10%), radial-gradient(ellipse at 90% 80%, rgba(255,210,230,0.06), transparent 14%);} 
+.hero{position:relative;text-align:left;padding:18px 12px;margin-bottom:20px}
+.title{font-weight:800;font-size:44px;margin:0 0 6px;color:#3b2130;text-shadow:0 6px 18px rgba(255,200,220,0.12)}
+.title{font-family:'Fredoka One', 'Poppins', sans-serif;}
+.title{background:linear-gradient(90deg,#ff9ec9,#ffbfdc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stamp{position:absolute;right:12px;top:10px;display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.7);border:1px solid rgba(200,150,170,0.12);backdrop-filter:blur(3px);color:#4a2e3c;font-weight:600;font-size:13px;transform:rotate(-12deg);box-shadow:0 8px 22px rgba(180,120,150,0.08);border-radius:6px;letter-spacing:0.6px}
+
+.controls{position:absolute;left:12px;top:8px;z-index:5}
+#theme-toggle{appearance:none;border:none;padding:8px 10px;border-radius:10px;background:linear-gradient(90deg,#ffd9ec,#ffd1e8);cursor:pointer;font-size:18px;box-shadow:0 8px 18px rgba(200,140,160,0.08)}
+#theme-toggle:hover{transform:translateY(-2px)}
+
+.container{padding:6px}
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;align-items:start}
+.card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,250,252,0.96));border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;min-height:110px;cursor:pointer;transition:transform 420ms cubic-bezier(.2,.9,.2,1),box-shadow 320ms;border:1px solid rgba(220,190,200,0.22)}
+.card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 46px rgba(200,160,180,0.12)}
+.card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:2px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));mix-blend-mode:screen;opacity:0;transition:opacity 360ms, transform 360ms;transform:scale(0.98);z-index:1}
+.card:hover::before{opacity:1;transform:scale(1)}
+.thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.02) saturate(1.02) brightness(0.95);transform-origin:center;transition:transform 480ms;z-index:0}
+.card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.0) 20%, rgba(245,235,240,0.6) 80%);opacity:1;transition:opacity 360ms;z-index:2}
+
+/* Dark theme card overlay */
+.theme-dark .card::after{background:linear-gradient(180deg,rgba(6,10,18,0.0) 30%, rgba(4,6,10,0.45) 70%)}
+
+/* In light theme, reduce thumbnail darkening and make card edges subtle */
+.theme-light .thumb{filter:contrast(1.06) saturate(1.08) brightness(1.03)}
+.theme-light .card{border:1px solid rgba(220,190,200,0.18);box-shadow:0 12px 32px rgba(200,160,180,0.06)}
+.card .content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.card h3{margin:0;font-size:18px;color:#fff;text-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.card .meta{margin-top:6px;color:rgba(230,238,248,0.75);font-size:13px}
+.card .links{margin-top:12px;display:flex;gap:8px;opacity:0;transform:translateY(6px);pointer-events:none;transition:all 320ms ease}
+.card .links a{background:linear-gradient(90deg,#ffd1e8,#ffabcd);padding:8px 12px;border-radius:10px;color:#38192a;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 8px 22px rgba(200,140,160,0.06);transition:transform 180ms}
+.card .links a:hover{transform:translateY(-3px)}
+.card.expanded{min-height:180px;transform:scale(1.02);box-shadow:0 30px 60px rgba(2,6,23,0.7)}
+.card.expanded .thumb{transform:scale(1.05)}
+.card.expanded .links{opacity:1;transform:translateY(0);pointer-events:auto}
+
+/* subtle shimmer */
+.card .shimmer{position:absolute;left:-120%;top:0;height:100%;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);transform:skewX(-18deg);animation:shimmer 5.8s linear infinite;pointer-events:none;z-index:3}
+@keyframes shimmer{to{left:120%}}
+
+/* glowing accent on expanded */
+.card.expanded{--glow: rgba(255,120,180,0.18);}
+.card.expanded::before{box-shadow:0 6px 30px var(--glow) inset, 0 18px 60px rgba(255,120,180,0.06)}
+
+/* small tilt on hover for depth */
+.card:active{transform:translateY(-2px) rotateX(3deg) scale(1.005)}
+
+/* animated background gradient */
+@keyframes bgpan{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body{background-size:300% 300%;animation:bgpan 22s ease-in-out infinite}
+
+@media(min-width:1024px){
+  .games-grid{grid-template-columns:repeat(4,1fr)}
+  .card.expanded{grid-column:span 2}
+  .title{font-size:48px}
+}
+
+@media(max-width:420px){
+  .title{font-size:28px}
+  .stamp{right:8px;top:6px;padding:6px 10px;font-size:12px}
+  .card{min-height:120px}
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Во что мы можем поиграть</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1 class="title">Во что мы можем поиграть~</h1>
+      <span class="stamp">Специально для Маши</span>
+    </header>
+
+    <main class="container">
+      <section id="games-grid" class="games-grid" aria-label="Список игр"></section>
+    </main>
+
+    <footer class="footer">Нажмите на блок, чтобы посмотреть ссылку в Steam</footer>
+  </div>
+
+  <div id="game-popup" class="popup" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup__backdrop" data-popup-close></div>
+    <div class="popup__panel" role="document">
+      <button type="button" class="popup__close" aria-label="Закрыть окно игры" data-popup-close>×</button>
+      <img class="popup__image" src="" alt="" />
+      <div class="popup__body">
+        <h2 class="popup__title"></h2>
+        <p class="popup__text">Официальные страницы игр в Steam</p>
+        <div class="popup__links"></div>
+        <a class="popup__link" href="" target="_blank" rel="noopener noreferrer">Открыть в Steam</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
