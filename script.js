@@ -18,7 +18,7 @@ const games = [
   {name: 'PHOGS!', steam: 'https://store.steampowered.com/app/850320/PHOGS!/', img: 'IMG/PHOGS.jpg', tags: ['remote']},
   {name: 'Broforce', steam: 'https://store.steampowered.com/app/274190/Broforce/', img: 'IMG/Broforce.jpg', tags: ['remote']},
   {name: 'Unrailed!', steam: 'https://store.steampowered.com/app/1016920/Unrailed!/', img: 'IMG/Unrailed.jpg', tags: ['remote']},
-  {name: 'Magicka 1-2', steam: 'https://store.steampowered.com/app/238370/Magicka_2/', img: 'IMG/Magica.jpg', specialGroup: 'magicka', tags: ['remote']},
+  {name: 'Magicka 1-2', steam: 'https://store.steampowered.com/app/238370/Magicka_2/', img: 'IMG/Magicka.jpg', specialGroup: 'magicka', tags: ['remote']},
   {name: 'Pizza Tower', steam: 'https://store.steampowered.com/app/2231450/Pizza_Tower/', img: 'IMG/Pizza_Tower.jpg', tags: ['remote']},
   {name: 'Cuphead', steam: 'https://store.steampowered.com/app/268910/Cuphead/', img: 'IMG/Cuphead.jpg', tags: ['remote']},
   {name: 'Duck Game', steam: 'https://store.steampowered.com/app/312530/Duck_Game/', img: 'IMG/Duck_Game.jpg', tags: ['remote']},
@@ -56,8 +56,8 @@ const specialGroups = {
     {name: 'Cat Quest III', steam: 'https://store.steampowered.com/app/2305840/Cat_Quest_III/', img: 'IMG/cat_quest3.jpg'}
   ],
   magicka: [
-    {name: 'Magicka', steam: 'https://store.steampowered.com/app/42910/Magica/', img: 'IMG/magica1.jpg'},
-    {name: 'Magicka 2', steam: 'https://store.steampowered.com/app/238370/Magica_2/', img: 'IMG/magica.jpg'}
+    {name: 'Magicka', steam: 'https://store.steampowered.com/app/42910/Magicka/', img: 'IMG/Magicka1.jpg'},
+    {name: 'Magicka 2', steam: 'https://store.steampowered.com/app/238370/Magicka_2/', img: 'IMG/Magicka.jpg'}
   ]
 };
 
